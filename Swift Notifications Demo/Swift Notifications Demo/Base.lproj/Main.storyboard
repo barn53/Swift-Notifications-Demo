@@ -19,45 +19,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIC-gd-9Ko">
-                                <rect key="frame" x="20" y="44" width="131" height="36"/>
+                                <rect key="frame" x="20" y="40" width="133" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1uY-u7-cBz"/>
+                                    <constraint firstAttribute="width" constant="133" id="wjQ-6r-zpy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Notification on"/>
                                 <connections>
                                     <action selector="on:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zk4-Y3-K4r"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bzs-56-Vzf">
+                                <rect key="frame" x="276" y="220" width="49" height="180"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhe-qe-j8h">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2A-5F-ctA">
+                                        <rect key="frame" x="0.0" y="75" width="51" height="31"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZN4-dv-lgN">
+                                        <rect key="frame" x="0.0" y="149" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-qe-Vtf">
-                                <rect key="frame" x="447" y="44" width="133" height="36"/>
+                                <rect key="frame" x="447" y="40" width="133" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="C42-xT-eTs"/>
+                                    <constraint firstAttribute="width" constant="133" id="udP-ef-Xc6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Notification off"/>
                                 <connections>
                                     <action selector="off:" destination="BYZ-38-t0r" eventType="touchUpInside" id="prY-zJ-TWQ"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhe-qe-j8h">
-                                <rect key="frame" x="276" y="284" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2A-5F-ctA">
-                                <rect key="frame" x="276" y="345" width="51" height="31"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="KIC-gd-9Ko" secondAttribute="leading" id="0mC-oX-dxY"/>
-                            <constraint firstItem="Dhe-qe-j8h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Pa-kX-KlG"/>
-                            <constraint firstItem="f2A-5F-ctA" firstAttribute="width" secondItem="Dhe-qe-j8h" secondAttribute="width" id="1zx-Do-agl"/>
-                            <constraint firstItem="Dhe-qe-j8h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Az8-qQ-Axa"/>
-                            <constraint firstItem="KIC-gd-9Ko" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="H08-m1-1UF"/>
-                            <constraint firstItem="f2A-5F-ctA" firstAttribute="centerX" secondItem="Dhe-qe-j8h" secondAttribute="centerX" id="Pnc-bP-1Z3"/>
-                            <constraint firstItem="f2A-5F-ctA" firstAttribute="height" secondItem="Dhe-qe-j8h" secondAttribute="height" id="TNW-88-VRo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iYv-qe-Vtf" secondAttribute="trailing" id="WL7-ha-Vdg"/>
-                            <constraint firstItem="iYv-qe-Vtf" firstAttribute="baseline" secondItem="KIC-gd-9Ko" secondAttribute="baseline" id="chO-VP-gnR"/>
-                            <constraint firstItem="f2A-5F-ctA" firstAttribute="top" secondItem="Dhe-qe-j8h" secondAttribute="bottom" constant="30" id="yHS-ab-XLb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bzs-56-Vzf" secondAttribute="bottom" constant="200" id="7F2-H5-Pge"/>
+                            <constraint firstItem="iYv-qe-Vtf" firstAttribute="width" secondItem="KIC-gd-9Ko" secondAttribute="width" id="Cfz-VL-war"/>
+                            <constraint firstItem="iYv-qe-Vtf" firstAttribute="height" secondItem="KIC-gd-9Ko" secondAttribute="height" id="ETW-9e-XMG"/>
+                            <constraint firstItem="iYv-qe-Vtf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="GHm-GE-npU"/>
+                            <constraint firstItem="Bzs-56-Vzf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R3A-XL-X6k"/>
+                            <constraint firstItem="iYv-qe-Vtf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gr2-EI-Cm8"/>
+                            <constraint firstItem="Bzs-56-Vzf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="hbS-te-O1s"/>
+                            <constraint firstItem="KIC-gd-9Ko" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="kCa-Se-zpI"/>
+                            <constraint firstItem="KIC-gd-9Ko" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vPs-he-wmw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="notificationSwitch" destination="Dhe-qe-j8h" id="pkc-15-jS4"/>
                         <outlet property="notificationSwitch2" destination="f2A-5F-ctA" id="ggU-EY-BxB"/>
+                        <outlet property="notificationSwitch3" destination="ZN4-dv-lgN" id="94X-II-2d0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

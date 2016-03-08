@@ -10,20 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var observer: AnyObject!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "notificationSelector:", name: "Notification", object: nil)
+
+
+        // another approach with closure - a more swifty way...
+        observer = NSNotificationCenter.defaultCenter().addObserverForName("Notification", object: nil, queue: nil) { notification in
+            let userInfo = notification.userInfo! as! [String:Bool]
+            self.notificationSwitch3.setOn(userInfo["Switch"]!, animated: true)
+        }
+        // but what about housekeeping?
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var notificationSwitch2: UISwitch!
+    @IBOutlet weak var notificationSwitch3: UISwitch!
 
     @IBAction func on(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("Notification", object: self, userInfo: ["Switch" : true])
@@ -43,7 +53,7 @@ class ViewController: UIViewController {
 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(observer)
     }
 
 }
-
